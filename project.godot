@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="olcCodeJam 2021"
-run/main_scene="res://src/Menus/OpeningScene/StoryMovie.tscn"
+run/main_scene="res://src/Menus/FirstCutScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]

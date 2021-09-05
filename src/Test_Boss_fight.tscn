@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://src/Entities/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Entities/Boss/Boss.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/Menus/DialogBox.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Menus/Portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Entities/PlayerDetectionZone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/Music and Sounds/assets_music_FISHSTICKS.ogg" type="AudioStream" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Country_Tiles.png 0"
@@ -940,6 +941,10 @@ position = Vector2( -224, -326 )
 
 [node name="BR" parent="CustomCamera2D" index="1"]
 position = Vector2( 224, 218 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
 
 [connection signal="finished_dialog" from="CanvasLayer/DialogBox" to="." method="_on_DialogBox_finished_dialog"]
 [connection signal="finished" from="Portal" to="." method="_on_Portal_finished"]
