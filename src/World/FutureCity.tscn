@@ -964,6 +964,11 @@ position = Vector2( 208, 518 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Entities/Player"]
 remote_path = NodePath("../../../../CustomCamera2D")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="YSort/Entities/Player"]
+position = Vector2( -208, -518 )
+stream = ExtResource( 16 )
+autoplay = true
+
 [node name="OldMan" type="Position2D" parent="YSort/Entities"]
 position = Vector2( 392, 330 )
 
@@ -1106,10 +1111,6 @@ position = Vector2( -423.554, -763.75 )
 
 [node name="BR" parent="CustomCamera2D" index="1"]
 position = Vector2( 400, -6 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 16 )
-autoplay = true
 
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_entered" from="PlayerDetectionZoneBIGBOSS" to="." method="_on_PlayerDetectionZone_body_entered"]

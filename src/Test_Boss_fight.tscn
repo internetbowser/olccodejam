@@ -931,6 +931,11 @@ position = Vector2( 160, 256 )
 position = Vector2( 0, -58 )
 remote_path = NodePath("../../../CustomCamera2D")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="YSort/Player"]
+position = Vector2( -160, -256 )
+stream = ExtResource( 11 )
+autoplay = true
+
 [node name="Boss" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 160, 79 )
 
@@ -942,10 +947,6 @@ position = Vector2( -224, -326 )
 
 [node name="BR" parent="CustomCamera2D" index="1"]
 position = Vector2( 224, 218 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
-autoplay = true
 
 [connection signal="finished_dialog" from="CanvasLayer/DialogBox" to="." method="_on_DialogBox_finished_dialog"]
 [connection signal="finished" from="Portal" to="." method="_on_Portal_finished"]

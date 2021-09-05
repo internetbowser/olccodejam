@@ -26,6 +26,8 @@ onready var Projectile = preload("res://src/Entities/Projectiles/Ball.tscn")
 onready var Bomb = preload("res://src/Entities/Projectiles/Bomb.tscn")
 var projectile_timer = 0.0
 const PROJECTILE_RELOAD_TIME = 2.5
+var balls_thrown = 0
+const MIN_BALLS_THROWN = 4
 
 var wiggle_distance = 48.0
 var wiggle_duration = 0.5
@@ -80,15 +82,17 @@ func attack_state_process(delta: float) -> void:
 			
 			if projectile_timer > PROJECTILE_RELOAD_TIME:
 				projectile_timer = 0.0
-				if rand_range(0, 1) <= 0.33:
+				if rand_range(0, 1) <= 0.33 and balls_thrown > MIN_BALLS_THROWN:
+					balls_thrown = 0
 					var bomb = Bomb.instance()
 					bomb.global_position = Arm.global_position
 					bomb.path_norm  = global_position.direction_to(player.global_position)
 					bomb.duration = global_position.distance_to(player.global_position) / bomb.speed
 					get_parent().add_child(bomb)
 				else:
+					balls_thrown += 1
 					var ball = Projectile.instance()
-					ball.global_position = global_position
+					ball.global_position = Arm.global_position
 					ball.path_norm = global_position.direction_to(player.global_position)
 					get_parent().add_child(ball)
 				

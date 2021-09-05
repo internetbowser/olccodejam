@@ -22,10 +22,6 @@ auto_start = false
 [node name="DialogBox1" parent="CanvasLayer" instance=ExtResource( 5 )]
 dialog = [ "What is this?", "This looks advanced!" ]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 6 )
-autoplay = true
-
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 320.0
 margin_bottom = 180.0
@@ -50,6 +46,11 @@ position = Vector2( 32, 88 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 96 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2( -160, -96 )
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="finished_dialog" from="CanvasLayer/DialogBox2" to="." method="_on_DialogBox_finished_dialog"]
 [connection signal="finished_dialog" from="CanvasLayer/DialogBox1" to="." method="_on_DialogBox1_finished_dialog"]

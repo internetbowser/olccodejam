@@ -30,6 +30,7 @@ __meta__ = {
 }
 
 [node name="Portal" parent="." instance=ExtResource( 6 )]
+frame = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -55,6 +56,11 @@ position = Vector2( 3.8147e-06, -7.62939e-06 )
 rotation = 0.404916
 shape = SubResource( 1 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerActor"]
+position = Vector2( 20, -81 )
+stream = ExtResource( 7 )
+autoplay = true
+
 [node name="PlayerStopper" type="StaticBody2D" parent="."]
 position = Vector2( 274, 76 )
 collision_mask = 2
@@ -73,10 +79,6 @@ one_shot = true
 
 [node name="PortalCloseTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
-autoplay = true
 
 [connection signal="finished" from="Portal" to="." method="_on_Portal_finished"]
 [connection signal="finished_dialog" from="CanvasLayer/DialogBox" to="PlayerActor" method="_on_DialogBox_finished_dialog"]
