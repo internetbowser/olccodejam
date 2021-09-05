@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Menus/DialogBox.gd" type="Script" id=1]
+[ext_resource path="res://assets/RaccoonSerifText.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/DialogBox.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/Sprite-0001.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+extra_spacing_top = 5
+extra_spacing_char = 1
+extra_spacing_space = 2
+font_data = ExtResource( 2 )
+
+[node name="DialogBox" type="Polygon2D"]
+position = Vector2( 0, 13 )
+color = Color( 0.156863, 0.152941, 0.176471, 0.815686 )
+polygon = PoolVector2Array( 16, 112, 16, 160, 304, 160, 304, 112 )
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 115.0
+margin_right = 288.0
+margin_bottom = 155.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
+[node name="Helpers" type="Control" parent="."]
+margin_top = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="ColorRect" parent="Helpers"]
+margin_left = 13.0
+margin_top = 144.0
+margin_right = 69.0
+margin_bottom = 168.0
+color = Color( 0.156863, 0.152941, 0.176471, 0.815686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="Helpers/back"]
+margin_left = 17.0
+margin_top = 3.0
+margin_right = 57.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Helpers/back/label"]
+position = Vector2( 29, 13 )
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="next" type="ColorRect" parent="Helpers"]
+margin_left = 259.0
+margin_top = 144.0
+margin_right = 307.0
+margin_bottom = 168.0
+color = Color( 0.156863, 0.152941, 0.176471, 0.815686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="Helpers/next"]
+margin_left = 15.0
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "next
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="Helpers/next/label"]
+position = Vector2( -5, 13 )
+texture = ExtResource( 4 )
+hframes = 2
+frame = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

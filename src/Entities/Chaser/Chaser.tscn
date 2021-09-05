@@ -1,0 +1,164 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://src/World/ezgif.com-gif-maker.png" type="Texture" id=1]
+[ext_resource path="res://src/Overlap/SoftCollision.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Entities/Chaser/Chaser.gd" type="Script" id=3]
+[ext_resource path="res://src/Entities/WanderController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Entities/PlayerDetectionZone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Overlap/HitBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Overlap/HurtBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Stats.gd" type="Script" id=8]
+[ext_resource path="res://White_Color_Shader.shader" type="Shader" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 9 )
+shader_param/active = false
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 567, 567 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 567, 0, 567, 567 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 1134, 0, 567, 567 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 1701, 0, 567, 567 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 2268, 0, 567, 567 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 567, 567, 567 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 567, 567, 567, 567 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 1134, 567, 567, 567 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=8]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 8.06226
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 55.7513
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id=14]
+radius = 8.0
+height = 4.0
+
+[node name="Chaser" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 0.374096, -11.4512 )
+scale = Vector2( 0.0704479, 0.0560711 )
+frames = SubResource( 7 )
+animation = "attack"
+playing = true
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/start = SubResource( 8 )
+anims/stop = SubResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 10 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource( 11 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+position = Vector2( -0.164391, -13.0157 )
+shape = SubResource( 12 )
+
+[node name="HitBox" parent="." instance=ExtResource( 6 )]
+collision_mask = 16
+
+[node name="CollisionPolygon2D" parent="HitBox" index="0"]
+position = Vector2( 0, -15 )
+shape = SubResource( 13 )
+
+[node name="HurtBox" parent="." instance=ExtResource( 7 )]
+collision_layer = 32
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0.31498, -13.1101 )
+shape = SubResource( 14 )
+
+[node name="WanderController" parent="." instance=ExtResource( 4 )]
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource( 8 )
+max_health = 2
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="invincibility_ended" from="HurtBox" to="." method="_on_HurtBox_invincibility_ended"]
+[connection signal="invincibility_started" from="HurtBox" to="." method="_on_HurtBox_invincibility_started"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="SoftCollision"]
+[editable path="PlayerDetectionZone"]
+[editable path="HitBox"]
+[editable path="HurtBox"]
