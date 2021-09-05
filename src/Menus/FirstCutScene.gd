@@ -14,7 +14,7 @@ func _on_Button_pressed() -> void:
 	player.pause()
 
 func _on_Button_released() -> void:
-	pass # Replace with function body.
+	button.queue_free()
 
 func _on_DialogBox_finished_dialog() -> void:
 	player.un_pause()

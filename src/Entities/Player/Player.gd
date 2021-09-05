@@ -130,7 +130,13 @@ func AttackAnimation_finished() -> void:
 	velocity = Vector2.ZERO
 
 func _on_Stats_no_health() -> void:
-	queue_free()
 	var player_explosiion = DeathEffect.instance()
 	get_parent().add_child(player_explosiion)
 	player_explosiion.global_position = global_position
+	hurt_box.set_collision_layer_bit(Globals.PhysicsLayers.PlayerHurtBox, false)
+	animation_state.travel("death")
+	state = STUCK
+	pause()
+
+func die():
+	get_tree().reload_current_scene()

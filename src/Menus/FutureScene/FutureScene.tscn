@@ -1168,6 +1168,7 @@ shape = SubResource( 94 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+autoplay = true
 
 [connection signal="finished" from="Portal" to="." method="_on_Portal_finished"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
