@@ -24,6 +24,7 @@ func _on_DialogBox_finished_dialog() -> void:
 	portal.visible = true
 	gravity_for_portal = true
 	player_detection_zone.connect("body_entered", self, "on_PlayerDetectionZone_body_entered")
+	get_tree().change_scene("res://src/Menus/EndScene/EndScene.tscn")
 
 func on_PlayerDetectionZone_body_entered(body: Node) -> void:
 	player.pause()
