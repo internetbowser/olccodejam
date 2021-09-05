@@ -914,7 +914,6 @@ tile_data = PoolIntArray( -196610, 0, 0, -196609, 0, 1, -262144, 0, 1, -262143, 
 [node name="Portal" parent="." instance=ExtResource( 9 )]
 visible = false
 position = Vector2( 160, 80 )
-frame = 2
 
 [node name="PlayerDetectionZone" parent="Portal" instance=ExtResource( 10 )]
 

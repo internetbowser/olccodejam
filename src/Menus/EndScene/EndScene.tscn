@@ -1,0 +1,424 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/World/Country_Tiles.png" type="Texture" id=1]
+[ext_resource path="res://assets/OldMan.png" type="Texture" id=2]
+[ext_resource path="res://assets/OldMan3.png" type="Texture" id=3]
+[ext_resource path="res://src/Menus/DialogBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/OldMan4.png" type="Texture" id=5]
+[ext_resource path="res://assets/OldMan2.png" type="Texture" id=6]
+[ext_resource path="res://src/Menus/EndScene/EndScene.gd" type="Script" id=7]
+[ext_resource path="res://src/Menus/Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Entities/Player/Sprite Sheet.png" type="Texture" id=9]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Country_Tiles.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Scene" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="DialogBox" parent="Ui" instance=ExtResource( 4 )]
+dialog = [ "You saved us!!!!!", "We are forever in your debt!", "Now go away!" ]
+
+[node name="MEN" type="CanvasLayer" parent="."]
+
+[node name="YSort" type="YSort" parent="MEN"]
+
+[node name="OldMEN" type="YSort" parent="MEN/YSort"]
+
+[node name="OldMan" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 24.5936, 13.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan7" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 141.594, 13.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan3" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 63.5936, 13.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan4" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 82.5936, 13.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan5" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 102.594, 13.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan2" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 44.1933, 13.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan6" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 121.193, 13.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan8" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 24.5936, 29.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan9" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 141.594, 29.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan10" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 63.5936, 29.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan11" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 82.5936, 29.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan12" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 102.594, 29.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan13" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 44.1933, 29.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan14" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 121.193, 29.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan15" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 24.5936, 45.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan16" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 141.594, 45.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan17" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 63.5936, 45.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan18" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 82.5936, 45.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan19" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 102.594, 45.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan20" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 44.1933, 45.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan21" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 121.193, 45.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan22" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 161.594, 13.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan23" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 278.594, 13.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan24" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 200.594, 13.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan25" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 219.594, 13.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan26" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 239.594, 13.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan27" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 181.193, 13.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan28" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 258.193, 13.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan29" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 161.594, 29.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan30" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 278.594, 29.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan31" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 200.594, 29.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan32" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 219.594, 29.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan33" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 239.594, 29.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan34" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 181.193, 29.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan35" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 258.193, 29.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan36" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 161.594, 45.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan37" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 278.594, 45.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan38" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 200.594, 45.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan39" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 219.594, 45.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan43" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 299.594, 13.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan44" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 299.594, 29.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan45" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 299.594, 45.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan40" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 239.594, 45.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan41" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 181.193, 45.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan42" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 258.193, 45.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan46" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 24.5936, 61.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan47" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 141.594, 61.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan48" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 63.5936, 61.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan49" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 82.5936, 61.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan50" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 102.594, 61.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan51" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 44.1933, 61.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan52" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 121.193, 61.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan53" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 24.5936, 77.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan54" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 141.594, 77.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan55" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 63.5936, 77.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan56" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 82.5936, 77.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan57" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 102.594, 77.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan58" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 44.1933, 77.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan59" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 121.193, 77.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan60" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 24.5936, 93.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan61" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 141.594, 93.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan62" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 63.5936, 93.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan63" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 82.5936, 93.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan64" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 102.594, 93.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan65" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 44.1933, 93.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan66" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 121.193, 93.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan67" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 161.594, 61.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan68" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 278.594, 61.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan69" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 200.594, 61.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan70" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 219.594, 61.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan71" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 239.594, 61.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan72" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 181.193, 61.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan73" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 258.193, 61.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan74" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 161.594, 77.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan75" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 278.594, 77.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan76" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 200.594, 77.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan77" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 219.594, 77.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan78" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 239.594, 77.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan79" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 181.193, 77.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan80" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 258.193, 77.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan81" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 161.594, 93.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan82" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 278.594, 93.3311 )
+texture = ExtResource( 2 )
+
+[node name="OldMan83" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 200.594, 93.3311 )
+texture = ExtResource( 3 )
+
+[node name="OldMan84" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 219.594, 93.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan85" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 299.594, 61.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan86" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 299.594, 77.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan87" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 299.594, 93.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan88" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 239.594, 93.3311 )
+texture = ExtResource( 6 )
+
+[node name="OldMan89" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 181.193, 93.3311 )
+texture = ExtResource( 5 )
+
+[node name="OldMan90" type="Sprite" parent="MEN/YSort/OldMEN"]
+position = Vector2( 258.193, 93.3311 )
+texture = ExtResource( 5 )
+
+[node name="YSort" type="YSort" parent="MEN/YSort"]
+
+[node name="Grass" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0 )
+
+[node name="Portal" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 160, 152 )
+frame = 2
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 160, 152 )
+texture = ExtResource( 9 )
+hframes = 8
+vframes = 6
+frame = 33
+
+[connection signal="finished_dialog" from="Ui/DialogBox" to="." method="_on_DialogBox_finished_dialog"]
+[connection signal="finished" from="Portal" to="." method="_on_Portal_finished"]

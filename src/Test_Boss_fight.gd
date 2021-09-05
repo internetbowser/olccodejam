@@ -32,3 +32,4 @@ func on_PlayerDetectionZone_body_entered(body: Node) -> void:
 
 func _on_Portal_finished() -> void:
 	player.queue_free()
+	

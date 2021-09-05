@@ -86,14 +86,14 @@ func attack_state_process(delta: float) -> void:
 					balls_thrown = 0
 					var bomb = Bomb.instance()
 					bomb.global_position = Arm.global_position
-					bomb.path_norm  = global_position.direction_to(player.global_position)
+					bomb.path_norm  = bomb.global_position.direction_to(player.global_position)
 					bomb.duration = global_position.distance_to(player.global_position) / bomb.speed
 					get_parent().add_child(bomb)
 				else:
 					balls_thrown += 1
 					var ball = Projectile.instance()
 					ball.global_position = Arm.global_position
-					ball.path_norm = global_position.direction_to(player.global_position)
+					ball.path_norm = ball.global_position.direction_to(player.global_position)
 					get_parent().add_child(ball)
 				
 		AttackStates.Stomping:
