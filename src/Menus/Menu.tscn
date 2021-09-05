@@ -5,7 +5,7 @@
 [ext_resource path="res://src/Menus/AnimatedSprite.gd" type="Script" id=3]
 [ext_resource path="res://src/Menus/AnimatedSprite2.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 28
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -14,7 +14,7 @@ extra_spacing_char = 1
 extra_spacing_space = 2
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 14
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -23,28 +23,28 @@ extra_spacing_char = 1
 extra_spacing_space = 2
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "pressed",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "released",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=6]
 size = 10
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -75,7 +75,7 @@ margin_left = 16.6855
 margin_top = 10.6787
 margin_right = 165.685
 margin_bottom = 43.6787
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "Boss Blitz"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -86,7 +86,7 @@ margin_left = 64.0723
 margin_top = 39.3778
 margin_right = 441.072
 margin_bottom = 72.3778
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 text = "to the future and back!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -95,7 +95,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Decorations"]
 position = Vector2( 265.807, 116.869 )
 scale = Vector2( 3.09422, 2.82876 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
 animation = "released"
 script = ExtResource( 3 )
 
@@ -104,7 +104,7 @@ margin_left = 243.568
 margin_top = 95.1603
 margin_right = 287.568
 margin_bottom = 143.16
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "Play"
 flat = true
 __meta__ = {
@@ -114,7 +114,7 @@ __meta__ = {
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Decorations"]
 position = Vector2( 61.5558, 118.619 )
 scale = Vector2( 3.09422, 2.82876 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
 animation = "released"
 script = ExtResource( 4 )
 
@@ -123,7 +123,7 @@ margin_left = 23.3169
 margin_top = 95.9094
 margin_right = 67.3169
 margin_bottom = 143.909
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "Instructions"
 flat = true
 __meta__ = {

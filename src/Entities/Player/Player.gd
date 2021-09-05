@@ -17,6 +17,7 @@ export var Friction = 500
 
 onready var hurt_box = $HurtBox
 onready var stats = $Stats
+onready var health_bar = $UI/HealthBar
 
 onready var DeathEffect = preload("res://assets/Effects/EnemyDeathEffect.tscn")
 onready var player_hurt_sfx = preload("res://src/Entities/Player/PlayerHurtSound.tscn")
@@ -117,6 +118,7 @@ func _on_HurtBox_area_entered(area: Area2D) -> void:
 	hurt_box.create_hit_effect()
 	var player_hurt_sound = player_hurt_sfx.instance()
 	get_tree().current_scene.add_child(player_hurt_sound)
+	health_bar.update_health(stats.get_health_ratio())
 
 
 func _on_HurtBox_invincibility_started() -> void:
