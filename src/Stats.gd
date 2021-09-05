@@ -17,7 +17,6 @@ func set_max_health(value) -> void:
 func set_health(value: int) -> void:
 	health = value
 	health_ratio = float(health) / float(max_health)
-	print(health_ratio)
 	emit_signal("health_changed", health)
 	if health <= 0:
 		emit_signal("no_health")

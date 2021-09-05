@@ -154,6 +154,9 @@ position = Vector2( 0, -7 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
+[node name="Arm" type="Position2D" parent="."]
+position = Vector2( -16, -24 )
+
 [node name="HitBox" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -21 )
 

@@ -105,7 +105,6 @@ func _on_HurtBox_area_entered(area: Area2D) -> void:
 	hurt_box.create_hit_effect()
 	hurt_box.start_invincibility(0.4)
 
-
 func _on_HurtBox_invincibility_ended() -> void:
 	blink_animation_player.play("stop")
 

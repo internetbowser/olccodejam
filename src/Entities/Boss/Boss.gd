@@ -23,6 +23,7 @@ export var FRICTION = 200
 onready var DeathEffect = preload("res://assets/Effects/EnemyDeathEffect.tscn")
 
 onready var Projectile = preload("res://src/Entities/Projectiles/Ball.tscn")
+onready var Bomb = preload("res://src/Entities/Projectiles/Bomb.tscn")
 var projectile_timer = 0.0
 const PROJECTILE_RELOAD_TIME = 2.5
 
@@ -37,6 +38,7 @@ onready var animation_player = $AnimationPlayer
 onready var blink_animation_player = $BlinkAnimationPlayer
 onready var hurt_box = $HurtBox
 var player : Actor = null
+onready var Arm = $Arm
 
 var player_global_pos = Vector2.ZERO
 
@@ -78,9 +80,18 @@ func attack_state_process(delta: float) -> void:
 			
 			if projectile_timer > PROJECTILE_RELOAD_TIME:
 				projectile_timer = 0.0
-				var ball = Projectile.instance()
-				ball.path_norm = global_position.direction_to(player.global_position)
-				add_child(ball)
+				if rand_range(0, 1) <= 0.33:
+					var bomb = Bomb.instance()
+					bomb.global_position = Arm.global_position
+					bomb.path_norm  = global_position.direction_to(player.global_position)
+					bomb.duration = global_position.distance_to(player.global_position) / bomb.speed
+					get_parent().add_child(bomb)
+				else:
+					var ball = Projectile.instance()
+					ball.global_position = global_position
+					ball.path_norm = global_position.direction_to(player.global_position)
+					get_parent().add_child(ball)
+				
 		AttackStates.Stomping:
 			animation_player.play("stomp")
 			velocity.y = min((player.global_position.y - global_position.y - 16) * MAX_SPEED * delta, MAX_SPEED)
